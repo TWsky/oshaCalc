@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory, IndexRoute  } from 'react-router';
 
 
 class App extends React.Component {
@@ -15,15 +14,10 @@ class App extends React.Component {
       outputValue: ""
     }
 
-    this.setStateHandler = this.setStateHandler.bind(this);
     this.handleOnchange = this.handleOnchange.bind(this);
     this.getDomNodeHandler = this.getDomNodeHandler.bind(this);
-    this.updateState = this.updateState.bind(this);
   };
 
-  setStateHandler() {
-
-  };
 
   handleOnchange(event) {
     var salaryType = "";
@@ -45,9 +39,6 @@ class App extends React.Component {
     ReactDOM.findDOMNode(divId).style.color = 'green';
   };
 
-  updateState(e) {
-    this.setState({selectedValue: e.target.value})
-  };
 
   render() {
     return (
