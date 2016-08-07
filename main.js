@@ -1,5 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { paidType } from './reducers/paidTypeReducer'
+// import { mainReducer } from './reducers'
+import { App } from './components/App'
 
-ReactDOM.render(<App />, document.getElementById('salaryT'));
+
+const store = createStore(paidType);
+
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('App')
+);

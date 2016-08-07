@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.11.4",
+    "babel-plugin-object-assign": "^1.2.1",
+    "deep-freeze-es6": "^1.0.1",
+    "expect": "^1.20.2",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
     "react-redux": "^4.4.5",
