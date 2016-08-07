@@ -4,7 +4,7 @@ import selectSalaryType from '../containers/selectSalaryType'
 
 const App = () => {
   <div>
-    <h1>Hello World</h1>
+    <selectSalaryType />
   </div>
 }
 
