@@ -2,20 +2,20 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import PayPeriod from './PayPeriod'
 
-const SalaryTypeList = ({ salaryType, oncheckedType, ScheckClick}) => (
-  <div>
-    <ul>
-      {salaryType.map(st =>
-        <PayPeriod
-          key={st.id}
-          text={st}
-          onChecked={st === oncheckedType}
-          onClick={() => ScheckClick(st)}
-        />
-      )}
-    </ul>
-    <h3>計薪方式：{oncheckedType}</h3>
-  </div>
+const SalaryTypeList = ({ salaryTypes, oncheckedType, ScheckClick}) => (
+    <div>
+      <ul>
+        {salaryTypes.map(salaryType =>
+          <PayPeriod
+            key={salaryType.id}
+            {...salaryType}
+            onChecked={salaryType.text === oncheckedType}
+            onClick={() => ScheckClick(salaryType.id)}
+          />
+        )}
+      </ul>
+      <h3>計薪方式：{oncheckedType}</h3>
+    </div>
 )
 
 SalaryTypeList.propTypes = {
@@ -26,5 +26,18 @@ SalaryTypeList.propTypes = {
   oncheckedType: PropTypes.string.isRequired,
   ScheckClick: PropTypes.func.isRequired
 }
+
+SalaryTypeList.defaultProps = {
+  salaryTypes: [{
+    text: 'MONTH_PAID'
+  },{
+    text: 'DAY_PAID'
+  },{
+    text: 'HOUR_PAID'
+  }],
+  oncheckedType: 'MONTH_PAID'
+}
+
+
 
 export default SalaryTypeList

@@ -14,9 +14,9 @@ const PayPeriod = ({ onChecked, text, onClick }) => (
 )
 
 PayPeriod.propTypes = {
-  onChecked: PropTypes.func.isRequired,
+  onChecked: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.string.isRequired
+  onClick: PropTypes.func.isRequired
 }
 
 export default PayPeriod

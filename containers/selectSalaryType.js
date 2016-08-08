@@ -2,9 +2,10 @@ import { connect } from 'react-redux'
 import { updateSalaryType } from '../actions'
 import SalaryTypeList from '../components/SalaryTypeList'
 
+
 const mapStateToProps = (state) => {
   return {
-    salaryType: state.salaryType,
+    salaryTypes: state.salaryTypes,
     oncheckedType: state.selectedSalaryType
   }
 }
@@ -17,9 +18,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const selectSalaryType = connect(
+const SelectSalaryType = connect(
   mapStateToProps,
   mapDispatchToProps
 )(SalaryTypeList)
 
-export default selectSalaryType
+export default SelectSalaryType
