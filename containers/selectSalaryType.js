@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: (salaryT) => {
+    ScheckClick: (salaryT) => {
       dispatch(updateSalaryType(salaryT))
     }
   }

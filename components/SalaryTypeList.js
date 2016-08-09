@@ -8,9 +8,9 @@ const SalaryTypeList = ({ salaryTypes, oncheckedType, ScheckClick}) => (
         {salaryTypes.map(salaryType =>
           <PayPeriod
             key={salaryType.id}
-            {...salaryType}
-            onChecked={salaryType.text === oncheckedType}
-            onClick={() => ScheckClick(salaryType.id)}
+            text={salaryType}
+            onChecked={salaryType === oncheckedType}
+            onClick={() => ScheckClick(salaryType)}
           />
         )}
       </ul>
@@ -26,18 +26,6 @@ SalaryTypeList.propTypes = {
   oncheckedType: PropTypes.string.isRequired,
   ScheckClick: PropTypes.func.isRequired
 }
-
-SalaryTypeList.defaultProps = {
-  salaryTypes: [{
-    text: 'MONTH_PAID'
-  },{
-    text: 'DAY_PAID'
-  },{
-    text: 'HOUR_PAID'
-  }],
-  oncheckedType: 'MONTH_PAID'
-}
-
 
 
 export default SalaryTypeList
