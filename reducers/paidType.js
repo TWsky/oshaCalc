@@ -1,7 +1,4 @@
-const initialState = {
-  salaryTypes: ["MONTH_PAID", "DAY_PAID", "HOUR_PAID"],
-  selectedSalaryType: 'MONTH_PAID'
-}
+import initialState from './initState'
 
 
 const paidType = (state = initialState, action) => {
@@ -15,4 +12,4 @@ const paidType = (state = initialState, action) => {
   }
 }
 
-export default paidType;
+export default paidType

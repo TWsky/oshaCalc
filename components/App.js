@@ -1,10 +1,11 @@
 import React from 'react'
 import SelectSalaryType from '../containers/selectSalaryType'
-// import WorkingCycle from './components/Workingcycle'
+import SelectTransType from '../containers/selectTransType'
 
 const App = () => (
   <div>
     <SelectSalaryType />
+    <SelectTransType />
   </div>
 )
 

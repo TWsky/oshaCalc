@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
-import paidType from './paidTypeReducer'
-// import { workingCycle } form './workingCycleReducer'
+import paidType from './paidType'
+import workingCycle from './workingCycle'
 
 const mainReducer = combineReducers({
-  paidType
+  paidType,
+  workingCycle
 })
 
 export default mainReducer
