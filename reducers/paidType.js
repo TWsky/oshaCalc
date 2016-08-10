@@ -1,5 +1,7 @@
-import initialState from './initState'
-
+const initialState = {
+  salaryTypes: ["MONTH_PAID", "DAY_PAID", "HOUR_PAID"],
+  selectedSalaryType: 'MONTH_PAID'
+}
 
 const paidType = (state = initialState, action) => {
   switch (action.type) {
@@ -8,7 +10,7 @@ const paidType = (state = initialState, action) => {
         selectedSalaryType: action.text
       })
     default:
-      return state;
+      return state
   }
 }
 

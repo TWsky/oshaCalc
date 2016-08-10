@@ -1,5 +1,6 @@
-import initialState from './initState'
-
+const initialState = {
+  selectedTransType: 'NAN'
+}
 const workingCycle = (state = initialState, action) => {
   switch(action.type) {
     case 'UPDATE_WORKING_CYCLE_TYPE':
@@ -7,7 +8,7 @@ const workingCycle = (state = initialState, action) => {
         selectedTransType: action.text
       })
     default:
-      return state;
+      return state
   }
 }
 

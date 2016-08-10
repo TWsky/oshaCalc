@@ -24,4 +24,8 @@ WorkingTypeTrans.propTypes = {
   Tclick: PropTypes.func.isRequired
 }
 
+WorkingTypeTrans.defaultProps = {
+  transTypes: ['無變形', '兩週變形', '四週變形', '八週變形']
+}
+
 export default WorkingTypeTrans

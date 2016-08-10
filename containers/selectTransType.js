@@ -25,15 +25,14 @@ const convertTrans = (CHTtranType) => {
 
 const mapStateToProps = (state) => {
   return {
-    transTypes: state.transTypes,
-    oncheckedType: state.selectedSalaryType
+    oncheckedType: convertTrans(state.workingCycle.selectedTransType)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     Tclick: (transType) => {
-      dispatch(updateWorkingCycleType(transType))
+      dispatch(updateWorkingCycleType(convertTrans(transType)))
     }
   }
 }

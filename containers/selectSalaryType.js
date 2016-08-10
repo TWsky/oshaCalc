@@ -5,8 +5,8 @@ import SalaryTypeList from '../components/SalaryTypeList'
 
 const mapStateToProps = (state) => {
   return {
-    salaryTypes: state.salaryTypes,
-    oncheckedType: state.selectedSalaryType
+    salaryTypes: state.paidType.salaryTypes,
+    oncheckedType: state.paidType.selectedSalaryType
   }
 }
 
