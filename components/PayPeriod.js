@@ -8,7 +8,7 @@ const PayPeriod = ({ onChecked, text, onClick }) => (
       type="radio"
       name="salaryT"
       value={text}
-      checked={onChecked}
+      defaultChecked={onChecked}
       onClick={onClick}
     />{text}
   </div>

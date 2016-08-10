@@ -19,10 +19,7 @@ const SalaryTypeList = ({ salaryTypes, oncheckedType, ScheckClick}) => (
 )
 
 SalaryTypeList.propTypes = {
-  salaryTypes: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired,
+  salaryTypes: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   oncheckedType: PropTypes.string.isRequired,
   ScheckClick: PropTypes.func.isRequired
 }
