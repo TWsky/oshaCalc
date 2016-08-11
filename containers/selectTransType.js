@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { updateWorkingCycleType } from '../actions'
-import WorkingTypeTrans from '../components/WorkingTypeTrans'
+import RadioQueryForm from '../components/RadioQueryForm'
 
 const convertTrans = (CHTtranType) => {
   switch (CHTtranType) {
@@ -23,15 +23,18 @@ const convertTrans = (CHTtranType) => {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
+    title: ownProps.data.title,
+    buttonlist: ownProps.data.buttonlist,
+    resultVal: ownProps.data.resultVal,
     oncheckedType: convertTrans(state.workingCycle.selectedTransType)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    Tclick: (transType) => {
+    btnClick: (transType) => {
       dispatch(updateWorkingCycleType(convertTrans(transType)))
     }
   }
@@ -40,6 +43,6 @@ const mapDispatchToProps = (dispatch) => {
 const SelectTransType = connect(
   mapStateToProps,
   mapDispatchToProps
-)(WorkingTypeTrans)
+)(RadioQueryForm)
 
 export default SelectTransType

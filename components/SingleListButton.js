@@ -1,22 +1,22 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
-const PayPeriod = ({ onChecked, text, onClick }) => (
+const SingleListButton = ({btnName, onChecked, text, onClick}) => (
   <div>
     <input
-      type="button"
-      name="salaryT"
+      type='button'
+      name={btnName}
       value={text}
       defaultChecked={onChecked}
       onClick={onClick}
     />
-  </div>
+</div>
 )
 
-PayPeriod.propTypes = {
+SingleListButton.propTypes = {
   onChecked: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
 }
 
-export default PayPeriod
+export default SingleListButton

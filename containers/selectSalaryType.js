@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { updateSalaryType } from '../actions'
-import SalaryTypeList from '../components/SalaryTypeList'
+import RadioQueryForm from '../components/RadioQueryForm'
 
 const convertSal = (CHTSalaryType) => {
   switch (CHTSalaryType) {
@@ -19,15 +19,18 @@ const convertSal = (CHTSalaryType) => {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
+    title: ownProps.data.title,
+    buttonlist: ownProps.data.buttonlist,
+    resultVal: ownProps.data.resultVal,
     oncheckedType: convertSal(state.paidType.selectedSalaryType)
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    ScheckClick: (sal) => {
+    btnClick: (sal) => {
       dispatch(updateSalaryType(convertSal(sal)))
     }
   }
@@ -36,6 +39,6 @@ const mapDispatchToProps = (dispatch) => {
 const SelectSalaryType = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SalaryTypeList)
+)(RadioQueryForm)
 
 export default SelectSalaryType
