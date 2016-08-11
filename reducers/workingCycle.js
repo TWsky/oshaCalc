@@ -1,4 +1,5 @@
 const initialState = {
+  transTypes: ['NAN', 'TwoWK', 'FourWK', 'EightWK'], // components static
   selectedTransType: 'NAN'
 }
 const workingCycle = (state = initialState, action) => {

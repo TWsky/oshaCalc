@@ -4,6 +4,9 @@ import TransButton from './TransButton'
 
 const WorkingTypeTrans = ({ transTypes, oncheckedType, Tclick}) => (
     <div>
+      <h1>
+        是否變形工時
+      </h1>
       <span>
         {transTypes.map((transType, id) =>
           <TransButton
@@ -14,7 +17,9 @@ const WorkingTypeTrans = ({ transTypes, oncheckedType, Tclick}) => (
           />
         )}
       </span>
-      <h3>變形工時：{oncheckedType}</h3>
+      <h3>
+        變形工時：{oncheckedType}
+      </h3>
     </div>
 )
 

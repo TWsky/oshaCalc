@@ -1,16 +1,15 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
-
 const PayPeriod = ({ onChecked, text, onClick }) => (
   <div>
     <input
-      type="radio"
+      type="button"
       name="salaryT"
       value={text}
       defaultChecked={onChecked}
       onClick={onClick}
-    />{text}
+    />
   </div>
 )
 
