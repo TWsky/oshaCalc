@@ -4,9 +4,9 @@ import SingleListButton from './SingleListButton'
 
 const RadioQueryForm = ({ title, buttonlist, oncheckedType, btnClick, resultVal }) => (
     <div>
-      <h1>
+      <h2>
         {title}
-      </h1>
+      </h2>
       <span>
         {buttonlist.map((btnItem, id) =>
           <SingleListButton

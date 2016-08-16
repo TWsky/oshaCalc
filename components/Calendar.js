@@ -16,12 +16,6 @@ const formatStr = 'YYYY-MM-DD';
 
 const now = moment();
 
-const divStyle = {
-  display: 'inline-block',
-  width: '40%',
-  margin: '5%'
-};
-
 function format(v) {
   return v ? v.format(formatStr) : '';
 }
@@ -35,11 +29,11 @@ class ResultCalendar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
         <div>
-          <h2>選擇對應日期</h2>
+          <h2>3.選擇對應日期</h2>
         </div>
-        <div style={divStyle}>
+        <div className="col-xs-6">
           <RangeCalendar
             defaultValue={now}
             dateInputPlaceholder={['start', 'end']}
@@ -49,12 +43,12 @@ class ResultCalendar extends React.Component {
             onSelect={this.props.onStandaloneSelect}
           />
         </div>
-        <div style={divStyle}>
-          <h4>
+        <div className="col-xs-6">
+          <h3>
             請依您的出勤紀錄選擇對應的範圍日期
-            （理論上除八週需選兩個月外，其餘皆一個月）
-          </h4>
-          <h5>您選的日期：</h5>
+            （理論上除八週需選兩個月外，<br/>其餘皆一個月）
+          </h3>
+          <h3>您選的日期：</h3>
           <div>
             <input type='textbox' value={this.props.startDate} onChange={this.props.onStandaloneSelect}/>
             <span> ~ </span>

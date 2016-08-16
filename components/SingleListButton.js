@@ -5,6 +5,7 @@ const SingleListButton = ({btnName, onChecked, text, onClick}) => (
   <div>
     <input
       type='button'
+      className="btn btn-lg btn-default"
       name={btnName}
       value={text}
       defaultChecked={onChecked}

@@ -1,0 +1,39 @@
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+#step1 {
+    background-color: #dd8888;
+    color: #fdfdfd;
+}
+
+#step2 {
+    background-color: #88dd88;
+    color: #fdfdfd;
+}
+
+#step3 {
+    background-color: #8888dd;
+}
+
+h2 {
+    font-size: 56px;
+}
+
+.row {
+    text-align: center;
+}
+
+.row input[type="button"] {
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 32px;
+}
