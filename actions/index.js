@@ -15,3 +15,11 @@ export const updateWorkingCycleType = (text) => {
     text: text
   }
 }
+
+export const initDateRange = (startDate, endDate) => {
+  return {
+    type: 'INIT_DATE_RANGE',
+    startDate: startDate,
+    endDate: endDate
+  }
+}
