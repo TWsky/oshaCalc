@@ -24,14 +24,14 @@ function format(v) {
 class ResultCalendar extends React.Component {
   constructor(props) {
     super(props)
-    const { startDate, endDate, onStandaloneSelect } = this.props
+    const { title, content, label, startDate, endDate, onStandaloneSelect } = this.props
   }
 
   render() {
     return (
       <div className="row">
         <div>
-          <h2>3.選擇對應日期</h2>
+          <h2>{this.props.title}</h2>
         </div>
         <div className="col-xs-6">
           <RangeCalendar
@@ -44,11 +44,8 @@ class ResultCalendar extends React.Component {
           />
         </div>
         <div className="col-xs-6">
-          <h3>
-            請依您的出勤紀錄選擇對應的範圍日期
-            （理論上除八週需選兩個月外，<br/>其餘皆一個月）
-          </h3>
-          <h3>您選的日期：</h3>
+          <h3>{this.props.content}</h3>
+          <h3>{this.props.label}</h3>
           <div>
             <input type='textbox' value={this.props.startDate} onChange={this.props.onStandaloneSelect}/>
             <span> ~ </span>

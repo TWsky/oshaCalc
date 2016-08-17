@@ -9,3 +9,9 @@ export const transData = {
   buttonlist: ['無變形', '兩週變形', '四週變形', '八週變形'],
   resultVal: '變形工時：'
 }
+
+export const calendarData = {
+  title: '3.選擇對應日期',
+  content: '請依您的出勤紀錄選擇對應的範圍日期\n（理論上除八週需選兩個月外，其餘皆一個月）',
+  label: '您選的日期：'
+}

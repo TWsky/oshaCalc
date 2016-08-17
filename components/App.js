@@ -1,5 +1,5 @@
 import React from 'react'
-import { salaryData, transData } from './staticDataSet'
+import { salaryData, transData, calendarData } from './staticDataSet'
 import SelectSalaryType from '../containers/selectSalaryType'
 import SelectTransType from '../containers/selectTransType'
 import SelectCalendarRange from '../containers/selectCalendarRange'
@@ -38,7 +38,7 @@ const App = React.createClass({
           </div>
           <div id="step2" className="section">
             <div className="container">
-              <SelectCalendarRange />
+              <SelectCalendarRange data={calendarData}/>
             </div>
           </div>
           <div id="step3" className="section">

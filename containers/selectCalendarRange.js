@@ -2,8 +2,11 @@ import { connect } from 'react-redux'
 import { initDateRange } from '../actions'
 import ResultCalendar from '../components/Calendar'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
+    title: ownProps.data.title,
+    content: ownProps.data.content,
+    label: ownProps.data.label,
     startDate: state.dateInfo.startDate,
     endDate: state.dateInfo.endDate
   }
