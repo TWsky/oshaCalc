@@ -28,7 +28,13 @@ var nationVacation = [
 const initialState = {
   startDate: '',
   endDate: '',
-  workDateInfo: []
+  workDateInfo: [
+    {
+      date: 'NAN',
+      workingHour: 0,
+      workdayType: 'WD'
+    }
+  ]
 }
 
 const dateInfo = (state = initialState, action) => {
