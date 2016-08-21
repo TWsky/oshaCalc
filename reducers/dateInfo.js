@@ -34,7 +34,8 @@ const initialState = {
       workingHour: 0,
       workdayType: 'WD'
     }
-  ]
+  ],
+  curEditId: '0'
 }
 
 const dateInfo = (state = initialState, action) => {
@@ -66,6 +67,10 @@ const dateInfo = (state = initialState, action) => {
         startDate: action.startDate,
         endDate: action.endDate,
         workDateInfo: acc
+      })
+    case 'UPDATE_DATEINFOBOX_ID':
+      return Object.assign({}, state, {
+        curEditId: action.id
       })
     default:
       return state

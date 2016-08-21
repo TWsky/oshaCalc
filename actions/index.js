@@ -23,3 +23,18 @@ export const initDateRange = (startDate, endDate) => {
     endDate: endDate
   }
 }
+
+export const updateShowDateInfoBoxId = (id) => {
+  return {
+    type: 'UPDATE_DATEINFOBOX_ID',
+    id: id
+  }
+}
+
+export const updateDateInfoArr = (id, dateInfoObj) => {
+  return {
+    type: 'UPDATE_DATEINFO_ARRAY',
+    id: id,
+    dateInfoObj: dateInfoObj
+  }
+}

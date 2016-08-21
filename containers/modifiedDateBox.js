@@ -1,17 +1,21 @@
 import { connect } from 'react-redux'
-import { initDateRange } from '../actions'
+import { initDateRange, updateShowDateInfoBoxId, updateDateInfoArr } from '../actions'
 import DateInfoList from '../components/DateInfoList'
 
 const mapStateToProps = (state) => {
   return {
-    workDateInfo: state.dateInfo.workDateInfo
+    workDateInfo: state.dateInfo.workDateInfo,
+    curEditId: state.dateInfo.curEditId
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    diBoxOnclick: (id) => {
-      console.log(id)
+    loadDateInfo: (id) => {
+      dispatch(updateShowDateInfoBoxId(id))
+    },
+    updateDateInfo: (id, arrObj) => {
+      dispatch(updateDateInfoArr(id, arrObj))
     }
   }
 }
