@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onStandaloneSelect: (value) => {
       dispatch(initDateRange(value[0].format('YYYY-MM-DD'), value[1].format('YYYY-MM-DD')))
-    }
+    },
+    
   }
 }
 

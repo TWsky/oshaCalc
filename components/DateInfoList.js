@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import DateInfoBox from './DateInfoBox'
-import ShownDateInfoForm from './ShownDateInfoForm'
+import DateInfoForm from './DateInfoForm'
 
 
 class DateInfoList extends React.Component {
@@ -24,7 +24,8 @@ class DateInfoList extends React.Component {
           )}
         </div>
         <div className="col-xs-3">
-          <ShownDateInfoForm data={this.props.workDateInfo[this.props.curEditId]} />
+          <DateInfoForm
+            data={this.props.workDateInfo} curID={this.props.curEditId} dayTypeDispatch={this.props.updateDateInfo}/>
         </div>
       </div>
     )

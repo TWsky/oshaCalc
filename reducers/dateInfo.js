@@ -30,7 +30,7 @@ const initialState = {
   endDate: '',
   workDateInfo: [
     {
-      date: 'NAN',
+      date: '2000-01-01',
       workingHour: 0,
       workdayType: 'WD'
     }
@@ -71,6 +71,15 @@ const dateInfo = (state = initialState, action) => {
     case 'UPDATE_DATEINFOBOX_ID':
       return Object.assign({}, state, {
         curEditId: action.id
+      })
+    case 'UPDATE_DATEINFO_ARRAY':
+      const index = action.id
+      return Object.assign({}, state, {
+        workDateInfo: [
+          ...state.workDateInfo.slice(0, index),
+          Object.assign({}, state.workDateInfo[index], action.dateInfoObj),
+          ...state.workDateInfo.slice(index + 1)
+        ]
       })
     default:
       return state
