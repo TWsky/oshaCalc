@@ -3,6 +3,7 @@ import { salaryData, transData, calendarData } from './staticDataSet'
 import SelectSalaryType from '../containers/selectSalaryType'
 import SelectTransType from '../containers/selectTransType'
 import SelectCalendarRange from '../containers/selectCalendarRange'
+import ModifiedDateBox from '../containers/modifiedDateBox'
 
 const App = React.createClass({
   componentDidMount: function() {
@@ -42,6 +43,9 @@ const App = React.createClass({
             </div>
           </div>
           <div id="step3" className="section">
+            <div className="container">
+              <ModifiedDateBox />
+            </div>
           </div>
         </div>
       </div>

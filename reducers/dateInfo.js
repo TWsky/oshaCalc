@@ -28,7 +28,14 @@ var nationVacation = [
 const initialState = {
   startDate: '',
   endDate: '',
-  workDateInfo: []
+  workDateInfo: [
+    {
+      date: '2000-01-01',
+      workingHour: 0,
+      workdayType: 'WD'
+    }
+  ],
+  curEditId: '0'
 }
 
 const dateInfo = (state = initialState, action) => {
@@ -60,6 +67,19 @@ const dateInfo = (state = initialState, action) => {
         startDate: action.startDate,
         endDate: action.endDate,
         workDateInfo: acc
+      })
+    case 'UPDATE_DATEINFOBOX_ID':
+      return Object.assign({}, state, {
+        curEditId: action.id
+      })
+    case 'UPDATE_DATEINFO_ARRAY':
+      const index = action.id
+      return Object.assign({}, state, {
+        workDateInfo: [
+          ...state.workDateInfo.slice(0, index),
+          Object.assign({}, state.workDateInfo[index], action.dateInfoObj),
+          ...state.workDateInfo.slice(index + 1)
+        ]
       })
     default:
       return state
