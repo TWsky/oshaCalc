@@ -38,3 +38,17 @@ export const updateDateInfoArr = (id, dateInfoObj) => {
     dateInfoObj: dateInfoObj
   }
 }
+
+export const updateSalaryList = (SL_Object) => {
+  return {
+    type: 'UPDATE_SALARY_LIST',
+    SL_Object: SL_Object
+  }
+}
+
+export const updateOverTimeList = (OT_Object) => {
+  return {
+    type: 'UPDATE_OVERTIME_LIST',
+    OT_Object: OT_Object
+  }
+}
