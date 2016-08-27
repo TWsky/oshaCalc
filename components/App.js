@@ -4,6 +4,7 @@ import SelectSalaryType from '../containers/selectSalaryType'
 import SelectTransType from '../containers/selectTransType'
 import SelectCalendarRange from '../containers/selectCalendarRange'
 import ModifiedDateBox from '../containers/modifiedDateBox'
+import AddUpWage from '../containers/AddUpWage'
 
 const App = React.createClass({
   componentDidMount: function() {
@@ -45,6 +46,11 @@ const App = React.createClass({
           <div id="step3" className="section">
             <div className="container">
               <ModifiedDateBox />
+            </div>
+          </div>
+          <div id="step4" className="section">
+            <div>
+              <AddUpWage />
             </div>
           </div>
         </div>
