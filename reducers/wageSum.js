@@ -48,7 +48,14 @@ const wageSum = (state = initialState, action) => {
           : ot_Obj
         }),
         overTimeSum: overTimeSum
-
+      })
+    case 'PUSH_SALARY_OBJ':
+      return Object.assign({}, state, {
+        salaryList: [ ...state.salaryList, action.newSL_Obj]
+      })
+    case 'PUSH_OVERTIME_OBJ':
+      return Object.assign({}, state, {
+        overTimeList: [ ...state.overTimeList, action.newOT_Obj]
       })
     default:
       return state

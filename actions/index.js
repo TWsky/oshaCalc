@@ -52,3 +52,17 @@ export const updateOverTimeList = (OT_Object) => {
     OT_Object: OT_Object
   }
 }
+
+export const pushSalaryList = (newSL_Obj) => {
+  return {
+    type: 'PUSH_SALARY_OBJ',
+    newSL_Obj: newSL_Obj
+  }
+}
+
+export const pushOverTimeList = (newOT_Obj) => {
+  return {
+    type: 'PUSH_OVERTIME_OBJ',
+    newOT_Obj: newOT_Obj
+  }
+}
