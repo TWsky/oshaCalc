@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { Button, Glyphicon } from 'react-bootstrap'
 
-const ItemListSum = ({title, itemList, sum, listChange, listPush}) => (
+const ItemListSum = ({title, itemList, sum, listChange, listPush, listPop}) => (
   <div className="col-xs-offset-1 col-xs-10" style={{marginBottom: '6%'}}>
     <h3>{title}</h3>
     <div>
@@ -16,10 +16,10 @@ const ItemListSum = ({title, itemList, sum, listChange, listPush}) => (
           </tr>
         </thead>
         <tbody>
-          {itemList.map((item) =>
-            <tr key={item.id}>
+          {itemList.map((item, ids) =>
+            <tr key={ids}>
               <td>
-                <Button bsSize="xsmall" onClick={() => console.log(itemList.length)}>
+                <Button bsSize="xsmall" onClick={() => listPop(item.id)}>
                   <Glyphicon glyph="minus"/>
                 </Button>
               </td>

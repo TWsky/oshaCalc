@@ -66,3 +66,17 @@ export const pushOverTimeList = (newOT_Obj) => {
     newOT_Obj: newOT_Obj
   }
 }
+
+export const popSalaryList = (id) => {
+  return {
+    type: 'POP_SALARY_LIST',
+    id: id
+  }
+}
+
+export const popOverTimeList = (id) => {
+  return {
+    type: 'POP_OVERTIME_LIST',
+    id: id
+  }
+}

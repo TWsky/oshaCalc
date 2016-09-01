@@ -17,10 +17,19 @@ const initialState = {
   overTimeSum: 0
 }
 
+
+
 const wageSum = (state = initialState, action) => {
+
+  let salarySum = 0
+  let overTimeSum = 0
+
+  const popItem = (stateItem) => {
+    return stateItem.id !== action.id
+  }
+
   switch (action.type) {
     case 'UPDATE_SALARY_LIST':
-      let salarySum = 0
       state.salaryList.map(sl_Obj => {
         sl_Obj.id === action.SL_Object.id
         ? salarySum += +action.SL_Object.volume
@@ -35,7 +44,6 @@ const wageSum = (state = initialState, action) => {
         salarySum: salarySum
       })
     case 'UPDATE_OVERTIME_LIST':
-      let overTimeSum = 0
       state.overTimeList.map(ot_Obj => {
         ot_Obj.id === action.OT_Object.id
         ? overTimeSum += +action.OT_Object.volume
@@ -56,6 +64,26 @@ const wageSum = (state = initialState, action) => {
     case 'PUSH_OVERTIME_OBJ':
       return Object.assign({}, state, {
         overTimeList: [ ...state.overTimeList, action.newOT_Obj]
+      })
+    case 'POP_SALARY_LIST':
+      state.salaryList.map(sl_Obj => {
+        sl_Obj.id === action.id
+        ? salarySum = salarySum
+        : salarySum += +sl_Obj.volume
+      })
+      return Object.assign({}, state, {
+        salarySum: salarySum,
+        salaryList: state.salaryList.filter(popItem)
+      })
+    case 'POP_OVERTIME_LIST':
+      state.overTimeList.map(ot_Obj => {
+        ot_Obj.id === action.id
+        ? overTimeSum = overTimeSum
+        : overTimeSum += +ot_Obj.volume
+      })
+      return Object.assign({}, state, {
+        overTimeSum: overTimeSum,
+        overTimeList: state.overTimeList.filter(popItem)
       })
     default:
       return state
